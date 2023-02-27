@@ -1,0 +1,51 @@
+
+<br>
+<div class="bootstrap-wrapper mt20">
+
+    <div clss="container text-center">
+        <div class="col-md-6 offset-md-3">
+            <mat-card>
+            <div class="container text-center"  id="abc">
+                     <img src="../../../assets/logo.png" alt=""/><br>
+            </div>
+            <br><br><br><br><br><br>
+            <h1 class="text-center">Login here !!</h1>
+            <hr>
+            <hr>
+            {{loginData | json}}
+            <form (ngSubmit)="formSubmit()">
+
+                <!--User Name field-->
+
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>User name</mat-label>
+                    <input
+                      [(ngModel)]="loginData.username"
+                      name="username"
+
+                    required
+                    
+                    matInput placeholder="Enter name">
+                    <mat-hint>Valid User Name</mat-hint>
+                </mat-form-field>
+                <br>
+                <!--User Password-->
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>User Password</mat-label>
+                    <input
+                      [(ngModel)]="loginData.password"
+                      name="password"
+
+                    required
+                    
+                    type="Password" matInput placeholder="Enter Password">
+                </mat-form-field>
+                <div class="container text-center">
+                    <button class="mr20" mat-raised-button color="primary" type="submit">Login</button>
+                    <button mat-raised-button color="accent" type="submit">Reset</button>
+                </div>
+            </form>
+            </mat-card>
+        </div>
+    </div>
+</div>

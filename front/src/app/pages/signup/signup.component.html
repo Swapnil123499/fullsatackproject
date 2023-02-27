@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<br>
+<div class="bootstrap-wrapper">
+
+    <div clss="container text-center">
+        <div class="col-md-6 offset-md-3">
+            <mat-card>
+            <div class="container" id="abc">
+            <img src="../../../assets/logo.png"/><br>
+            </div>
+                       <br><br><br><br><br><br>
+            <h1 class="text-center">register here !!</h1>
+                            <hr>
+                            <hr>
+                            {{user | json}}
+                            
+                            <form (ngSubmit)="formSubmit()">
+
+                                <!--User Name field-->
+
+                                <mat-form-field appearance="fill" class="full-width">
+                                    <mat-label>User name</mat-label>
+                                    <input
+                                    required
+                                    [(ngModel)]="user.username"
+                                    name="username"
+                                    matInput placeholder="Enter name">
+                                </mat-form-field>
+                                <!--User Password-->
+                                <mat-form-field appearance="fill" class="full-width">
+                                    <mat-label>User Password</mat-label>
+                                    <input
+                                    required
+                                    [(ngModel)]="user.password" 
+                                    name="password"
+                                    type="Password" matInput placeholder="Enter Password">
+                                </mat-form-field>
+                                <!--first name-->
+                                <mat-form-field appearance="fill" class="full-width">
+                                    <mat-label>first name</mat-label>
+                                    <input
+                                    required
+                                    [(ngModel)]="user.firstName"
+                                    name="firstName"
+                                     matInput placeholder="Enter first name">
+                                </mat-form-field>
+                                <!--Last name-->
+                                <mat-form-field appearance="fill" class="full-width">
+                                    <mat-label>last name</mat-label>
+                                    <input
+                                    required
+                                    [(ngModel)]="user.lastName"
+                                    name="lastName" matInput placeholder="Enter last name">
+                                </mat-form-field>
+                                <!--Email-->
+                                <mat-form-field appearance="fill" class="full-width">
+                                    <mat-label>Email</mat-label>
+                                    <input
+                                    required
+                                    [(ngModel)]="user.email"
+                                    name="email"
+                                     type="email" matInput placeholder="Enter email">
+                                </mat-form-field>
+                                <!--Phone number-->
+                                <mat-form-field appearance="fill" class="full-width">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input
+                                    required
+                                    [(ngModel)]="user.phone"
+                                    name="phone"
+                                     type="number" matInput placeholder="Enter Number">
+                                </mat-form-field>
+                                <!--button-->
+                                <div class="container text-center">
+                                    <button type="submit" mat-raised-button color="primary">Regiter</button>
+                                    <button style="margin-left: 20px" mat-raised-button color="accent">Clear</button>
+                                </div>
+                                <hr color="blue">
+
+
+                            </form>
+                        </mat-card>
+
+        </div>
+    </div>
+
+
+</div>

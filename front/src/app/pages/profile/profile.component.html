@@ -1,0 +1,64 @@
+<mat-card *ngIf="user">
+    <h3>Your Profile Details</h3>
+    <!--{{ user | json}}-->
+    <mat-card-content>
+        <div class="comtainer">
+            <div class="container text-center">
+                <img src="https://media.istockphoto.com/id/587805156/vector/profile-picture-vector-illustration.jpg?b=1&s=612x612&w=0&k=20&c=SglMfLhVtHrJei2x9az3Fwqin6icpFD_2lgD0eqZVZA="
+                class="profile-image">
+                <h1 class="mt20">{{user.firstName}} {{user.lastName}}</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <!--table details-->
+                    <table class="table text-center">
+                        <tr>
+                            <td>
+                                Username
+                            </td>
+                            <td>
+                                {{user.username}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Userid
+                            </td>
+                            <td>
+                                Exam{{user.id}}
+                            </td>
+                        </tr>
+                        <tr ><!--*ngIf="user.phone"  in case the phone number not there and we do not want to show the row -->
+                            <td>
+                                phone
+                            </td>
+                            <td>
+                                {{user.phone}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Role
+                            </td>
+                            <td>
+                                {{user.authorities[0].authority}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Status
+                            </td>
+                            <td>
+                                {{user.enabled?"ACTIVE":"NOTACTIVE"}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+    <button mat-raised-button color="primary">UPDAte</button>
+    <button mat-raised-button color="accent">SHARE</button>
+</mat-card-actions>
+</mat-card>

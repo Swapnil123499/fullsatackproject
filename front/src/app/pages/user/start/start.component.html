@@ -1,0 +1,98 @@
+
+<!--this ng if we used to hide the question from existing dashbord-->
+<div class="bootstrap-wrapper" *ngIf="attempted==0">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!--instructions-->
+                
+            </div>
+            <div class="col-md-8">
+                <!--questions-->
+                <ng-container *ngIf="questions">
+                    <mat-card>
+                  <h3>
+                   <b> {{questions[0].quiz.title}} </b>
+                  </h3>
+                </mat-card>
+                </ng-container>
+                <br>
+                <div><mat-card  class="mt20" *ngFor="let q of questions;let i=index">
+                    <mat-card-content>
+                        <p>{{i+1}})<span [innerHtml]="q.content"></span></p>
+                     
+                      <mat-divider></mat-divider>
+                      <div class="row">
+                        <div class="col-md-6 mt20">
+                            <input type="radio"
+                            [value]="q.option1"
+                            name="givenAnswer"
+                            [(ngModel)]="q.givenAnswer"
+                            
+                             />
+                             
+                            {{q.option1}}
+                        </div>
+                        <div class="col-md-6 mt20">
+                            <input type="radio"
+                            [value]="q.option2"  name="givenAnswer"
+                            [(ngModel)]="q.givenAnswer"
+                            />
+                            {{q.option2}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mt20">
+                            <input type="radio"
+                            [value]="q.option3"  name="givenAnswer"
+                            [(ngModel)]="q.givenAnswer"
+                            />
+                            {{q.option3}}
+                        </div>
+                        <div class="col-md-6 mt20">
+                            <input type="radio"
+                            [value]="q.option4"  
+                            name="givenAnswer"
+                            [(ngModel)]="q.givenAnswer"
+                            />
+                            {{q.option4}}
+                        </div>
+                      </div>
+                      {{i}}
+                      {{q.givenAnser}}
+                    </mat-card-content>
+                    <br>
+                </mat-card></div>
+                <div class="container text-center mt20 mb20">
+                    <button mat-raised-button (click)="submitQuiz()" color="accent">Submit Quiz</button>
+                </div>
+                
+
+            </div>
+            <div class="col-md-2">
+                <!--progress-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bootstrap-wrapper" *ngIf="attempted!=0">
+    <div class="row text-center">
+        <mat-card class="text-center">
+            <mat-card-title>
+                Quiz Result
+            </mat-card-title>
+          <div class="container">
+            <div class="col-md-12">
+                <h1>marks got {{marksGot}}</h1>
+                <h1>correct answer gives {{correctAnswer}}</h1>
+                <h1>totle number of questions attempted {{attempted}}</h1>
+            </div>
+          </div>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">Print</button>
+          </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
